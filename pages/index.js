@@ -1,8 +1,8 @@
-const Index = (props) => {
+const Index = () => {
   return (
-    <div>
-      <h1>index</h1>
-    </div>
+    <>
+        <h1>HOME</h1>
+    </>
   );
 };
 export default Index;
