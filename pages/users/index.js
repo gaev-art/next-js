@@ -1,10 +1,9 @@
 import Link from "next/link";
-import MainContainer from "../components/MainContainer";
 
-const Users = ({users}) => {
+const User = ({users}) => {
 
   return (
-    <MainContainer>
+    <>
       <h1>USERS</h1>
       <ul>
         {users.map(user => (
@@ -15,14 +14,14 @@ const Users = ({users}) => {
           </li>
         ))}
       </ul>
-    </MainContainer>
+    </>
   );
 };
 
-export default Users;
+export default User;
 
 export async function getStaticProps(context) {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const response = await fetch(`${process.env.API_HOST}/users`);
   const users = await response.json();
 
   return {
