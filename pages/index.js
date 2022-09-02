@@ -1,8 +1,11 @@
-const Index = (props) => {
+
+import MainContainer from "../components/MainContainer";
+
+const Index = () => {
   return (
-    <div>
-      <h1>index</h1>
-    </div>
+    <MainContainer>
+        <h1>HOME</h1>
+    </MainContainer>
   );
 };
 export default Index;
