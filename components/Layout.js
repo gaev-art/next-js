@@ -1,7 +1,7 @@
 import A from "./A";
 import Head from "next/head";
 
-const MainContainer = ({children, keywords}) => {
+const Layout = ({children, keywords}) => {
   return (
     <>
       <Head>
@@ -27,4 +27,4 @@ const MainContainer = ({children, keywords}) => {
   );
 };
 
-export default MainContainer;
+export default Layout;
