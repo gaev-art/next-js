@@ -1,7 +1,7 @@
-import {db} from "../../../db/users";
+import User from "../../../database/schema";
 
-export default function handler(request, response) {
-  const foundUser = db.users.find(user => user.id === +request.query.id);
+export default async function handler(request, response) {
+  const foundUser = await User.findOne({id: +request.query.id});
 
   if (!foundUser) {
     return response.json({
