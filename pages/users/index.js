@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const User = ({users}) => {
+const Users = ({users}) => {
 
   return (
     <>
@@ -18,10 +18,10 @@ const User = ({users}) => {
   );
 };
 
-export default User;
+export default Users;
 
 export async function getStaticProps(context) {
-  const response = await fetch(`${process.env.API_HOST}/users`);
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const users = await response.json();
 
   return {

@@ -1,10 +1,10 @@
 import A from "../components/A";
 
-export default function Error({title}) {
-  return (
+export default function Error() {
+  return(
     <>
-      <h1>{title}</h1>
-      <A title="Home" href="/"/>
+      <h1>Error</h1>
+      <A title='Home' href='/'/>
     </>
-  );
+  )
 };
