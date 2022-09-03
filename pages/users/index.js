@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const Users = ({users}) => {
-
   return (
     <>
       <h1>USERS</h1>
@@ -21,10 +20,10 @@ const Users = ({users}) => {
 export default Users;
 
 export async function getStaticProps(context) {
-  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/users`);
   const users = await response.json();
 
   return {
-    props: {users}, // will be passed to the page component as props
+    props: {users},
   };
 }
