@@ -10,6 +10,10 @@ const Users = ({users}) => {
             <Link href={`/users/${user.id}`}>
               <a>{user.name}</a>
             </Link>
+            <br/>
+            <span>{user.email}</span>
+            <br/>
+            <br/>
           </li>
         ))}
       </ul>
@@ -19,7 +23,7 @@ const Users = ({users}) => {
 
 export default Users;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/users`);
   const users = await response.json();
 

@@ -9,9 +9,16 @@ export default function User ({user}) {
 };
 
 
-export async function getServerSideProps({params}) {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/users/${params.id}`);
+export async function getServerSideProps(context) {
+  const {id} = context.params;
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/users/${id}`);
   const user = await response.json();
+  if (!user) {
+    return {
+      notFound: true
+    }
+  }
+
 
   return {
     props: {user},
